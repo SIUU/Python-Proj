@@ -1,2 +1,2 @@
 # Python-Proj
-Nothing Special
+Banki rendszer
