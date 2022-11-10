@@ -1,3 +1,3 @@
 # Python-Proj
 Banki rendszer
-Egyenleg megnézés, pénzutalás
+Egyenleg megnézés, pénzátutalás
