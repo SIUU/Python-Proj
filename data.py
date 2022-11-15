@@ -25,3 +25,4 @@ def Mentés():
         Pin.clear()
         Számlaszám.clear()
         Egyenleg.clear()
+
