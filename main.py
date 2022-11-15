@@ -7,18 +7,18 @@ Mentés()
 if belepve == None:
     print('Hibás név vagy PIN kód.')
 if belepve == True:
-    betölt()
     valasz = ''
     while valasz != '0':
+        betölt()
         valasz = menu()
         if valasz == '0':
             Kilépés()
         elif valasz == '1':
             Egyenlegmegtekintés()
         elif valasz == '2':
-            pass
+            Egyenlegfeltoltes()
         elif valasz == '3':
-            pass
+            Keszpenzfelvetel()
         elif valasz == '4':
             pass
         else:

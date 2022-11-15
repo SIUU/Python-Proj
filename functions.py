@@ -42,3 +42,27 @@ def Egyenlegmegtekintés():
     system('cls')
     print(f'Az ön egyenlege: {Egyenleg[index]}')
     input('\nNyomjon ENTERT a továbblépéshez!')
+
+def Egyenlegfeltoltes():
+    system('cls')
+    bekertOsszeg = input('Adja meg a feltölteni kívánt összeget: ')
+    if int(bekertOsszeg) > 0:
+        Egyenleg[index] = int(Egyenleg[index]) + int(bekertOsszeg)
+        print('Sikeres tranzakció')
+        time.sleep(1.5)
+    else:
+        system('cls')
+        print('Írjon be egy létező összeget')
+        time.sleep(1.5)
+
+def Keszpenzfelvetel():
+    system('cls')
+    lekertOsszeg = input('Adja meg a felvenni kívánt összeget: ')
+    if not int(lekertOsszeg) > int(Egyenleg[index]):
+        Egyenleg[index] = int(Egyenleg[index]) - int(lekertOsszeg)
+        print('Sikeres tranzakció')
+        time.sleep(1.5)
+    else:
+        system('cls')
+        print('A bankszámnlán nincs elég pénz a tranzakcióhoz.')
+        time.sleep(1.5)
