@@ -3,8 +3,9 @@ from data import *
 
 betölt()
 belepve = beleptetes()
-print(belepve)
 Mentés()
+if belepve == None:
+    print('Hibás név vagy PIN kód.')
 if belepve == True:
     betölt()
     valasz = ''
@@ -13,11 +14,15 @@ if belepve == True:
         if valasz == '0':
             Kilépés()
         elif valasz == '1':
-            pass
+            Egyenlegmegtekintés()
         elif valasz == '2':
             pass
         elif valasz == '3':
             pass
         elif valasz == '4':
             pass
+        else:
+            system('cls')
+            print('Hibás válasz')
+            time.sleep(1.5)
         Mentés()

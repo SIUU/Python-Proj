@@ -1,7 +1,7 @@
 from data import *
 from os import system
 import time
-
+index = -1
 
 def menu():
     choice = ''
@@ -16,19 +16,15 @@ def menu():
 
 def beleptetes():
     system('cls')
-    bekertnev = input('Kérem a Nevét: ')
-    bekertpin = input('Kérem a pin-t: ')
-    for i,nev in enumerate(Név):
-        if nev.upper() == bekertnev.upper():
-            if bekertpin == Pin[i]:
-                return True, i
-            else:
-                print('1')
-                return False
-        else:
-            print('2')
-            return False
-    
+    bekertNev = input('Kérem a nevét: ')
+    bekertPin = input('Kérem a PIN kódját: ')
+    for i,nevek in enumerate(Név):
+        if bekertNev == nevek:
+            if bekertPin == Pin[i]:
+                global index
+                index = i
+                return True
+
 
 def Kilépés():
     system('cls')
@@ -41,3 +37,8 @@ def Kilépés():
     print("Kilépés...")
     time.sleep(0.5)
     system('cls')
+
+def Egyenlegmegtekintés():
+    system('cls')
+    print(f'Az ön egyenlege: {Egyenleg[index]}')
+    input('\nNyomjon ENTERT a továbblépéshez!')
