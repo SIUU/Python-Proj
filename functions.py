@@ -52,7 +52,7 @@ def Egyenlegfeltoltes():
         time.sleep(1.5)
     else:
         system('cls')
-        print('Írjon be egy létező összeget')
+        print('Nincs elég pénz a tranzakcióhoz.')
         time.sleep(1.5)
 
 def Keszpenzfelvetel():
@@ -65,4 +65,22 @@ def Keszpenzfelvetel():
     else:
         system('cls')
         print('A bankszámnlán nincs elég pénz a tranzakcióhoz.')
+        time.sleep(1.5)
+
+def Atutalas():
+    system('cls')
+    bekertOsszeg = input('Adja meg az átutalni kívánt összeget: ')
+    bekertSzamla = input('Adja meg az átutalás címét (bankszámlaszám)')
+    if int(bekertOsszeg) < int(Egyenleg[index]):
+        for i,szamlaszam in enumerate(Számlaszám):
+            if not bekertSzamla in Számlaszám:
+                print('A megadott számlaszám nem létezik.')
+                time.sleep(1.5)
+            elif szamlaszam == bekertSzamla:
+                Egyenleg[index] = int(Egyenleg[index]) - int(bekertOsszeg)
+                Egyenleg[i] = int(Egyenleg[i]) + int(bekertOsszeg)
+                print('Sikeres tranzakció.')
+                time.sleep(1.5)
+    else:
+        print('Nincs elég pénz a tranzakcióhoz.')
         time.sleep(1.5)

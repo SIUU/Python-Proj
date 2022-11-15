@@ -20,7 +20,7 @@ if belepve == True:
         elif valasz == '3':
             Keszpenzfelvetel()
         elif valasz == '4':
-            pass
+            Atutalas()
         else:
             system('cls')
             print('Hibás válasz')
