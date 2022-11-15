@@ -14,6 +14,22 @@ def menu():
     choice = input('Válasszon egy menüpontot: ')
     return choice
 
+def beleptetes():
+    system('cls')
+    bekertnev = input('Kérem a Nevét: ')
+    bekertpin = input('Kérem a pin-t: ')
+    for i,nev in enumerate(Név):
+        if nev.upper() == bekertnev.upper():
+            if bekertpin == Pin[i]:
+                return True, i
+            else:
+                print('1')
+                return False
+        else:
+            print('2')
+            return False
+    
+
 def Kilépés():
     system('cls')
     print("Kilépés.")
